@@ -72,3 +72,28 @@ int postiPrenotati = Convert.ToInt32(Console.ReadLine());
 
 test.PrenotaPosti(postiPrenotati);
 Console.WriteLine(test.StampaPosti());
+
+Console.Write("Vuoi disdire dei posti(si/no)? ");
+
+string disdetta = Console.ReadLine();
+
+switch (disdetta)
+{
+    case "si":
+
+        Console.Write("Indica i posti da disdire: ");
+
+        int postiDisdetta = Convert.ToInt32(Console.ReadLine());
+        test.DisdiciPosti(postiDisdetta);
+        Console.WriteLine(test.StampaPosti());
+
+        break;
+
+    case "no":
+        Console.WriteLine("Ok, va bene");
+
+        break;
+
+    default:
+        break;
+}
