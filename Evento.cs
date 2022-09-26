@@ -149,4 +149,9 @@ public class Evento
         return stringa;
     }
 
+    public string RigaLista()
+    {
+       return this.data.ToString("dd/MM/yyyy") + " - " + this.titolo;
+    }
+
 }

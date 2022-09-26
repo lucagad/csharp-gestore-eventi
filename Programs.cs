@@ -1,54 +1,18 @@
 ﻿
-//MILESTONE 2
-//1.Nel vostro programma principale Program.cs, chiedete all’utente di inserire un nuovo evento con tutti i parametri richiesti dal costruttore.
-//2. Dopo che l’evento è stato istanziato, chiedete all’utente se e quante prenotazioni vuole fare e provare ad effettuarle.
-//3. Stampare a video il numero di posti prenotati e quelli disponibili.
-//4. Ora chiedere all’utente fintanto che lo desidera, se e quanti posti vuole disdire. Ogni volta che disdice dei posti, stampare i posti residui e quelli prenotati.
-//Attenzione: In questa prima fase non è necessario gestire le eventuali eccezioni da Program.cs che potrebbero insorgere,
-//eventualmente il programma si blocca se qualcosa va storto che voi avevate già previsto. Piuttosto pensate bene alla logica del vostro programma principale e della vostra classe Evento
-//pensando bene alle responsabilità dei metodi e alla visibilità di attributi e metodi.
+//MILESTONE 3
+//Creare una classe ProgrammaEventi con i seguenti attributi
+// - string Titolo
+// - List<Evento> eventi
 
-//Evento test = new Evento();
-//Evento test2 = new Evento();
-
-//try
-//{
-//    test = new Evento("test", DateTime.Parse("11/01/2022"), 5);
-//}
-//catch (ArgumentNullException)
-//{
-//Console.WriteLine("Il titolo non può esser vuoto");
-//}
-
-//Console.WriteLine("TEST");
-//Console.WriteLine(test.ToString());
-
-//try
-//{
-//    test.DisdiciPosti(5);
-//}
-//catch (ArgumentException e)
-//{
-//    Console.WriteLine(e.Message);
-//}
-
-//try
-//{
-//    test2 = new Evento("Test", DateTime.Parse("11/01/2022"), 5);
-//}
-//catch (ArgumentNullException e)
-//{
-//    Console.WriteLine(e.Message);
-//}
-//catch (ArgumentException e)
-//{
-//    Console.WriteLine(e.Message);
-//}
-
-//Console.WriteLine(" ");
-//Console.WriteLine("TEST2");
-//Console.WriteLine(test2.ToString());
-
+//Nel costruttore valorizzare il titolo, passato come parametro, e inizializzate la lista di eventi come una nuova Lista vuota di eventi.
+//Aggiungete poi i seguenti metodi:
+// - un metodo che aggiunge alla lista del programma eventi un Evento, passato come parametro al metodo.
+// - un metodo che restituisce una lista di eventi con tutti gli eventi presenti in una certa data.
+// - un metodo statico che si occupa, presa una lista di eventi, di stamparla in Console, o ancora meglio vi restituisca la rappresentazione in stringa della vostra lista di eventi.
+// - un metodo che restituisce quanti eventi sono presenti nel programma eventi attualmente.
+// - un metodo che svuota la lista di eventi.
+// - un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi aggiunti alla lista. Come nell’esempio qui sotto: Nome programma evento:
+//data1 - titolo1 data2 - titolo2 data3 - titolo3...
 
 
 Console.Write("Inserisci il nome dell'evento: ");
