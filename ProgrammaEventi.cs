@@ -12,7 +12,7 @@
 
 // - 1) un metodo che aggiunge alla lista del programma eventi un Evento, passato come parametro al metodo. (OK)
 
-// - 2) un metodo che restituisce una lista di eventi con tutti gli eventi presenti in una certa data.
+// - 2) un metodo che restituisce una lista di eventi con tutti gli eventi presenti in una certa data.(OK)
 
 // - 3) un metodo statico che si occupa, presa una lista di eventi, di stamparla in Console, o ancora meglio vi restituisca la rappresentazione in stringa della vostra lista di eventi. (OK)
 
