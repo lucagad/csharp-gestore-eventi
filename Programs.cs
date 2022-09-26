@@ -1,6 +1,7 @@
 ﻿
 //MILESTONE 1
-//Per prima cosa è necessario creare una classe Evento che abbia i seguenti attributi: ● titolo
+//Per prima cosa è necessario creare una classe Evento che abbia i seguenti attributi:
+// - titolo
 // - data
 // - capienza massima dell’evento
 // - numero di posti prenotati
@@ -10,7 +11,8 @@
 // - data sia in lettura e scrittura
 // - numero di posti per la capienza massima sia solo in lettura
 // - numero di posti prenotati sia solo in lettura
-//ai setters inserire gli opportuni controlli in modo che la data non sia già passata, che il titolo non sia vuoto e che la capienza massima di posti sia un numero positivo. In caso contrario sollevare opportune eccezioni.
+//ai setters inserire gli opportuni controlli in modo che la data non sia già passata, che il titolo non sia vuoto e che la capienza massima di posti sia un numero positivo.
+//In caso contrario sollevare opportune eccezioni.
 
 //Dichiarare un costruttore che prenda come parametri il titolo, la data e i posti a disposizione e inizializza gli opportuni attributi facendo uso dei metodi e controlli già fatti.
 //Per l’attributo posti prenotati invece si occupa di inizializzarlo lui a 0.
@@ -23,3 +25,32 @@
 
 //Le eccezioni possono essere generiche (Exception) o usate quelle già messe a disposizione da C#, ma aggiungete un eventuale messaggio chiaro per comunicare che cosa è successo.
 //Vi ricordo che man mano che andrete avanti con le altre milestones, potrete aggiungere più avanti altri eventuali metodi (public e private) che vi aiutino a svolgere le funzioni richieste se ritenete necessari!
+
+
+
+try
+{
+    Evento test = new Evento("test", DateTime.Parse("11/01/2022"), 50);
+}
+catch (ArgumentNullException)
+{
+Console.WriteLine("Il titolo non può esser vuoto");
+}
+
+
+Console.WriteLine("TEST");
+
+try
+{
+    Evento test2 = new Evento("Test", DateTime.Parse("11/01/2022"), -2);
+}
+catch (ArgumentNullException e)
+{
+    Console.WriteLine(e.Message);
+}
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+Console.WriteLine("TEST2");
