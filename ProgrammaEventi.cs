@@ -41,6 +41,11 @@ public class ProgrammaEventi
         this.eventi.Add(evento);
     }
 
+    public void AggiungiConferenza(Conferenza conferenza)
+    {
+        this.eventi.Add(conferenza);
+    }
+
     // METODO 2
     public string EventiData( DateTime dataRicerca)
     {

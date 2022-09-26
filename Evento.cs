@@ -108,10 +108,6 @@ public class Evento
         PostiPrenotati = 0;
     }
 
-    //public Evento()
-    //{
-    //}
-
     public void PrenotaPosti(int posti)
     {
         if (PostiPrenotati <= (CapienzaMassima - posti))

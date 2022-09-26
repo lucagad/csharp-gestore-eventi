@@ -13,8 +13,6 @@
 //4. Eliminate tutti gli eventi dal vostro programma.
 
 
-
-
 Console.Write("Inserisci il nome del tuo programma Eventi: ");
 string nomeProgrammaEventi = Console.ReadLine();
 
@@ -58,6 +56,28 @@ DateTime data = Convert.ToDateTime(Console.ReadLine());
 
 Console.WriteLine(programmaEventiUtente.EventiData(data) + "\n");
 
+Console.WriteLine("----- BONUS ----");
+Console.WriteLine("Aggiungiamo anche una conferenza!");
+
+
+try
+{
+    CreaNuovaConferenza();
+
+}
+catch (ArgumentNullException e)
+{
+    Console.WriteLine(e.Message);
+    CreaNuovaConferenza();
+}
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+    CreaNuovaConferenza();
+}
+
+
+
 Console.Write("Vuoi svuotare la lista degli eventi (si/no)? ");
 
 string svuotaLista = Console.ReadLine();
@@ -82,7 +102,6 @@ switch (svuotaLista)
     default:
        break;
 }
-
 
 
 
@@ -111,6 +130,34 @@ void CreaNuovoEvento()
 }
 
 
+void CreaNuovaConferenza()
+{
+    Console.WriteLine(" ");
+
+    Console.Write("Inserisci il nome della conferenza: ");
+    string nome = Console.ReadLine();
+
+    Console.Write("Inserisci la data della conferenza (gg/mm/yyyy): ");
+    DateTime data = Convert.ToDateTime(Console.ReadLine());
+
+    Console.Write("Inserisci il numero di posti per la conferenza ");
+    int posti = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Inserisci il Relatore della conferenza: ");
+    string relatore = Console.ReadLine();
+
+    Console.Write("Inserisci il prezzo del biglietto della conferenza ");
+    double prezzo = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine(" ");
+
+    Conferenza nuovaConferenza = new Conferenza(nome, data, posti, relatore ,prezzo);
+    programmaEventiUtente.AggiungiConferenza(nuovaConferenza);
+
+}
+
+
+
 
 
 
@@ -121,9 +168,6 @@ void CreaNuovoEvento()
 //eventoTest.PrenotaPosti(postiPrenotati);
 //Console.WriteLine(eventoTest.StampaPosti());
 
-
-
-
 ////EVENTI DI TEST DA TOGLIERE
 //Evento eventoTest2 = new Evento(nome +"2", data.AddMonths(1), posti);
 //Evento eventoTest3 = new Evento(nome + "3", data.AddDays(20), posti);
@@ -131,15 +175,6 @@ void CreaNuovoEvento()
 //programmaEventiTest.AggiungiEvento(eventoTest2);
 //programmaEventiTest.AggiungiEvento(eventoTest3);
 
-
-
-//Console.WriteLine(" ************* ");
-
-
-//Console.WriteLine(" ************* ");
-
-
-//Console.WriteLine(" ************* ");
 
 //Console.WriteLine(programmaEventiTest.ToString());
 
@@ -175,7 +210,7 @@ void CreaNuovoEvento()
 //        break;
 
 //    default:
-//        break;
+//        break;MILESTONE 4
 //}
 
 
