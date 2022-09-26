@@ -43,16 +43,38 @@ Console.WriteLine(eventoTest.StampaPosti());
 
 programmaEventiTest.AggiungiEvento(eventoTest);
 
-Console.WriteLine("NUMERO DI EVENTI PRESENTI: " + programmaEventiTest.NumeroEventi());
 
-Console.WriteLine("LISTA EVENTI: " + programmaEventiTest.StampaListaEventi());
+
+//EVENTI DI TEST DA TOGLIERE
+Evento eventoTest2 = new Evento(nome +"2", data.AddMonths(1), posti);
+Evento eventoTest3 = new Evento(nome + "3", data.AddDays(20), posti);
+
+programmaEventiTest.AggiungiEvento(eventoTest2);
+programmaEventiTest.AggiungiEvento(eventoTest3);
+
+
+Console.WriteLine("NUMERO DI EVENTI PRESENTI: " + programmaEventiTest.NumeroEventi() + "\n");
+
+Console.WriteLine(" ************* ");
+
+Console.WriteLine("LISTA EVENTI: \n" + programmaEventiTest.StampaListaEventi() + "\n");
+
+Console.WriteLine(" ************* ");
+
+Console.WriteLine("NUMERO DI EVENTI PRESENTI( " + data.ToShortDateString() + " ) \n" + programmaEventiTest.EventiData(data) + "\n");
+
+Console.WriteLine(" ************* ");
+
+Console.WriteLine(programmaEventiTest.ToString());
+
+Console.WriteLine(" ************* ");
 
 programmaEventiTest.SvuotaEventi();
 
-Console.WriteLine("NUMERO DI EVENTI PRESENTI: " + programmaEventiTest.NumeroEventi());
-
+Console.WriteLine(" ************* ");
 
 Console.WriteLine(programmaEventiTest.ToString());
+
 
 
 Console.Write("Vuoi disdire dei posti(si/no)? ");

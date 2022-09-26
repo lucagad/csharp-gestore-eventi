@@ -41,19 +41,33 @@ public class ProgrammaEventi
         this.eventi.Add(evento);
     }
 
+    // METODO 2
+    public string EventiData( DateTime dataRicerca)
+    {
+        string stringa = "-------------------\n";
+        foreach (Evento evento in eventi)
+        {
+            if(evento.Data.Date == dataRicerca.Date)
+            {
+                stringa += evento.RigaLista() + "\n";
+            }  
+        }
+
+        stringa += "-------------------";
+
+        return stringa;
+    }
+
     // METODO 3
     public string StampaListaEventi()
     {
-        string stringa = "-------------------\n";
+        string stringa= "";
 
         foreach (Evento evento in eventi)
         {
             stringa += " " + "\n";
-            stringa += evento.ToString() + "\n";
-            stringa += " " + "\n";
+            stringa += evento.RigaLista() + "\n";
         }
-
-        stringa += "-------------------";
 
         return stringa;
     }
@@ -79,7 +93,7 @@ public class ProgrammaEventi
             stringa += evento.RigaLista() + "\n";
         }
         
-        stringa += "-------------------";
+        stringa += "----------------------------------";
 
         return stringa;
     }
