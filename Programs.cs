@@ -26,23 +26,33 @@
 //Le eccezioni possono essere generiche (Exception) o usate quelle già messe a disposizione da C#, ma aggiungete un eventuale messaggio chiaro per comunicare che cosa è successo.
 //Vi ricordo che man mano che andrete avanti con le altre milestones, potrete aggiungere più avanti altri eventuali metodi (public e private) che vi aiutino a svolgere le funzioni richieste se ritenete necessari!
 
-
+Evento test = new Evento();
+Evento test2 = new Evento();
 
 try
 {
-    Evento test = new Evento("test", DateTime.Parse("11/01/2022"), 50);
+    test = new Evento("test", DateTime.Parse("11/01/2022"), 5);
 }
 catch (ArgumentNullException)
 {
 Console.WriteLine("Il titolo non può esser vuoto");
 }
 
-
 Console.WriteLine("TEST");
+Console.WriteLine(test.ToString());
 
 try
 {
-    Evento test2 = new Evento("Test", DateTime.Parse("11/01/2022"), -2);
+    test.DisdiciPosti(5);
+}
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+try
+{
+    test2 = new Evento("Test", DateTime.Parse("11/01/2022"), 5);
 }
 catch (ArgumentNullException e)
 {
@@ -53,4 +63,6 @@ catch (ArgumentException e)
     Console.WriteLine(e.Message);
 }
 
+Console.WriteLine(" ");
 Console.WriteLine("TEST2");
+Console.WriteLine(test2.ToString());
