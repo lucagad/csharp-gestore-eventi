@@ -108,9 +108,9 @@ public class Evento
         PostiPrenotati = 0;
     }
 
-    public Evento()
-    {
-    }
+    //public Evento()
+    //{
+    //}
 
     public void PrenotaPosti(int posti)
     {
@@ -128,6 +128,16 @@ public class Evento
             this.PostiPrenotati = PostiPrenotati - posti;
         }
         else throw new ArgumentException("Non è possibile disdire i posti");
+    }
+
+    public string StampaPosti()
+    {
+        string stringa = " \n";
+        stringa += "Numero di Posti Prenotati: " + this.postiPrenotati + "\n";
+        stringa += "Numero di Posti Disponibili: " + (this.CapienzaMassima - this.postiPrenotati) + "\n";
+        stringa += " ";
+
+        return stringa;
     }
 
     public override string ToString()
