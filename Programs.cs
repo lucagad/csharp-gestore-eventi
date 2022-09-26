@@ -15,6 +15,10 @@
 //data1 - titolo1 data2 - titolo2 data3 - titolo3...
 
 
+using System;
+
+ProgrammaEventi programmaEventiTest = new ProgrammaEventi("TestEventi");
+
 Console.Write("Inserisci il nome dell'evento: ");
 
 string nome = Console.ReadLine();
@@ -28,14 +32,28 @@ Console.Write("Inserisci il numero di posti totali: ");
 int posti = Convert.ToInt32(Console.ReadLine());
 
 
-Evento test = new Evento( nome, data, posti);
+Evento eventoTest = new Evento( nome, data, posti);
 
 Console.Write("Quanti posti desideri prenotare? ");
 
 int postiPrenotati = Convert.ToInt32(Console.ReadLine());
 
-test.PrenotaPosti(postiPrenotati);
-Console.WriteLine(test.StampaPosti());
+eventoTest.PrenotaPosti(postiPrenotati);
+Console.WriteLine(eventoTest.StampaPosti());
+
+programmaEventiTest.AggiungiEvento(eventoTest);
+
+Console.WriteLine("NUMERO DI EVENTI PRESENTI: " + programmaEventiTest.NumeroEventi());
+
+Console.WriteLine("LISTA EVENTI: " + programmaEventiTest.StampaListaEventi());
+
+programmaEventiTest.SvuotaEventi();
+
+Console.WriteLine("NUMERO DI EVENTI PRESENTI: " + programmaEventiTest.NumeroEventi());
+
+
+Console.WriteLine(programmaEventiTest.ToString());
+
 
 Console.Write("Vuoi disdire dei posti(si/no)? ");
 
@@ -48,8 +66,8 @@ switch (disdetta)
         Console.Write("Indica i posti da disdire: ");
 
         int postiDisdetta = Convert.ToInt32(Console.ReadLine());
-        test.DisdiciPosti(postiDisdetta);
-        Console.WriteLine(test.StampaPosti());
+        eventoTest.DisdiciPosti(postiDisdetta);
+        Console.WriteLine(eventoTest.StampaPosti());
 
         break;
 

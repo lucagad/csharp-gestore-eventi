@@ -10,18 +10,18 @@
 
 //Aggiungete poi i seguenti metodi:
 
-// - 1) un metodo che aggiunge alla lista del programma eventi un Evento, passato come parametro al metodo. (DA TESTARE)
+// - 1) un metodo che aggiunge alla lista del programma eventi un Evento, passato come parametro al metodo. (OK)
 
 // - 2) un metodo che restituisce una lista di eventi con tutti gli eventi presenti in una certa data.
 
-// - 3) un metodo statico che si occupa, presa una lista di eventi, di stamparla in Console, o ancora meglio vi restituisca la rappresentazione in stringa della vostra lista di eventi. (DA TESTARE)
+// - 3) un metodo statico che si occupa, presa una lista di eventi, di stamparla in Console, o ancora meglio vi restituisca la rappresentazione in stringa della vostra lista di eventi. (OK)
 
-// - 4) un metodo che restituisce quanti eventi sono presenti nel programma eventi attualmente.(DA TESTARE)
+// - 4) un metodo che restituisce quanti eventi sono presenti nel programma eventi attualmente.(OK)
 
-// - 5) un metodo che svuota la lista di eventi. (DA TESTARE)
+// - 5) un metodo che svuota la lista di eventi. (OK)
 
 // - 6) un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi aggiunti alla lista. Come nell’esempio qui sotto: Nome programma evento:
-//data1 - titolo1 data2 - titolo2 data3 - titolo3... (DA TESTARE)
+//data1 - titolo1 data2 - titolo2 data3 - titolo3... (OK)
 
 
 public class ProgrammaEventi
@@ -32,13 +32,13 @@ public class ProgrammaEventi
     public ProgrammaEventi(string titolo)
     {
         this.Titolo = titolo;
-        List<Evento> eventi = new List<Evento>();
+        eventi = new List<Evento>();
     }
 
     // METODO 1
-    public void AggiungiEvento( Evento evento)
+    public void AggiungiEvento(Evento evento)
     {
-        eventi.Add(evento);
+        this.eventi.Add(evento);
     }
 
     // METODO 3
@@ -48,9 +48,9 @@ public class ProgrammaEventi
 
         foreach (Evento evento in eventi)
         {
-            stringa += " ";
+            stringa += " " + "\n";
             stringa += evento.ToString() + "\n";
-            stringa += " ";
+            stringa += " " + "\n";
         }
 
         stringa += "-------------------";
@@ -61,13 +61,13 @@ public class ProgrammaEventi
     // METODO 4
     public int NumeroEventi()
     {
-        return eventi.Count();
+        return this.eventi.Count();
     }
 
     // METODO 5
     public void SvuotaEventi()
     {
-        eventi.Clear();
+        this.eventi.Clear();
     }
 
     // METODO 6
